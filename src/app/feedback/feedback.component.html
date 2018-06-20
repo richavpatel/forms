@@ -1,0 +1,57 @@
+
+<h2>send us  your feedback</h2>
+<form [formGroup]= "feedbackForm" (ngSubmit)="onSubmit()">
+
+  <div class="form-row">
+
+  <div class="form-group col-md-6">
+    <label>First name</label>
+           <input formControlName="firstname" class="form-control"  type="text" placeholder="firstname"></div>
+  
+
+      <div class="form-group col-md-6">
+          <label>Last name</label>
+             <input formControlName="lastname" class="form-control" type="text" placeholder="lastname"></div>
+  </div>
+  <div class="form-row">
+      <div class="form-group col-md-6">
+      <label>Email</label>
+               <input formControlName="email" class="form-control" >
+              </div>
+     
+               <div class="form-group col-md-6">
+                 <label>Phone number</label>
+                    <input formControlName="phoneno" class="form-control"   placeholder="phonenumber">
+                  </div>
+  </div> 
+  <div>
+  
+  </div>
+
+  <div class ="form-group">
+      <span>Write here</span>Message   <textarea formControlName="message" type="text" rows=12>
+    </textarea>
+    </div>
+
+    <div class="form-group"><label  >States</label>
+      <select class="form-control"ormControlName="states" >
+        <option formControlName="states">New york </option>
+        <option formControlName="states">ohio</option>
+        <option formControlName="states">georgia </option>
+        <option formControlName="states">......</option>
+      </select>
+    </div>
+  
+  <div class="form-group">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" id="gridCheck">
+        <label class="form-check-label" for="gridCheck">
+          Check me out
+        </label></div></div>
+    <button  type="submit" class="btn btn-success" >Submit</button>
+    
+  
+</form>
+<p> {{feedbackForm.value |json}}</p>
+
+<p> {{feedbackForm.status |json}}</p>
