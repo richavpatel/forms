@@ -6,17 +6,22 @@
 
   <div class="form-group col-md-6">
     <label>First name</label>
-           <input formControlName="firstname" class="form-control"  type="text" placeholder="firstname"></div>
+           <input formControlName="firstname" class="form-control"  type="text" placeholder="firstname">
+           <span class="text-danger" *ngIf="feedbackForm.controls['firstname'].invalid && feedbackForm.controls['firstname'].touched"> enter valid name please</span>
   
-
+          </div>
       <div class="form-group col-md-6">
           <label>Last name</label>
-             <input formControlName="lastname" class="form-control" type="text" placeholder="lastname"></div>
+             <input formControlName="lastname" class="form-control" type="text" placeholder="lastname">
+            <span class="text-danger" *ngIf="feedbackForm.controls['lastname'].invalid && feedbackForm.controls['lastname'].touched">please enter valid last name</span>
+            </div>
+
   </div>
   <div class="form-row">
       <div class="form-group col-md-6">
       <label>Email</label>
                <input formControlName="email" class="form-control" >
+               <span class="text-danger" *ngIf="feedbackForm.controls['email'].invalid && feedbackForm.controls['email'].touched">please enter valid Email name</span>
               </div>
      
                <div class="form-group col-md-6">
@@ -48,7 +53,7 @@
         <label class="form-check-label" for="gridCheck">
           Check me out
         </label></div></div>
-    <button  type="submit" class="btn btn-success" >Submit</button>
+    <button  type="submit" class="btn btn-success" [disabled]="feedbackForm.invalid" >Submit</button>
     
   
 </form>

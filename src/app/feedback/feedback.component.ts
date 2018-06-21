@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
 
 @Component({
@@ -18,9 +18,9 @@ feedback: any;
   }
   createForm(){
     this.feedbackForm = this.fb.group({
-      firstname:'',
-      lastname:'',
-          email:'',
+      firstname: ['',Validators.maxLength(3)],
+      lastname:['',Validators.compose([Validators.required,Validators.maxLength(4)])],
+          email: ['',Validators.email],
       phoneno:'',
       states: 'newyork',
       agree :'boolean',
